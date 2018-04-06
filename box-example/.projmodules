@@ -1,6 +1,6 @@
 [submodule "roles/sa-mongo"]
         path = roles/sa-mongo
         url = https://github.com/softasap/sa-mongo.git
-[submodule "roles/sa-pritunl"]
-        path = roles/sa-pritunl
-        url = https://github.com/softasap/sa-pritunl.git
+[submodule "roles/sa-vpn-pritunl"]
+        path = roles/sa-vpn-pritunl
+        url = https://github.com/softasap/sa-vpn-pritunl.git
