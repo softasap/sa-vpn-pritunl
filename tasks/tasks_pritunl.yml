@@ -7,20 +7,18 @@
         name: pritunl
         description: pritunl repo
         file: pritunl
-        baseurl: http://mirror.pritunl.com/yum/pritunl/x86_64/
+        baseurl: https://repo.pritunl.com/stable/yum/centos/7/
         gpgcheck: no
       become: yes
       tags:
         - pritunl
-        
+
     - name: PRITUNL | Install EPEL
       yum: name=epel-release state=present
       when: ansible_distribution != "Fedora"
       become: yes
       tags:
         - pritunl
-
-
 
     - name: PRITUNL | Install dependencies
       yum: name={{item}} state=present

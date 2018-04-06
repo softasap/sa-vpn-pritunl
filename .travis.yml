@@ -17,11 +17,11 @@ env:
 #    init: /usr/sbin/init
 #    run_opts: ""
 #    playbook: test.yml
-#  - distribution: centos
-#    version: 7
-#    init: /usr/lib/systemd/systemd
-#    run_opts: "--privileged"
-#    playbook: test.yml
+ - distribution: centos
+   version: 7
+   init: /usr/lib/systemd/systemd
+   run_opts: "--privileged"
+   playbook: test.yml
 #  - distribution: alpine
 #    version: 3.4
 #    init: /sbin/init
