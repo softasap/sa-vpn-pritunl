@@ -25,10 +25,10 @@ galaxy_info:
       versions:
         - trusty
         - xenial
-    - name: EL
-      versions:
-      - 7
-      - 6
+#    - name: EL
+#      versions:
+#      - 7
+#      - 6
   galaxy_tags:
     - pritunl
     - openvpn
