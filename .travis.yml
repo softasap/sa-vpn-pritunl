@@ -11,7 +11,7 @@ env:
     version: 16.04
     init: /sbin/init
     run_opts: ""
-#    playbook: test.yml
+    playbook: test.yml
 #  - distribution: fedora
 #    version: 25
 #    init: /usr/sbin/init
