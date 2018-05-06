@@ -7,20 +7,18 @@
         name: pritunl
         description: pritunl repo
         file: pritunl
-        baseurl: http://mirror.pritunl.com/yum/pritunl/x86_64/
+        baseurl: https://repo.pritunl.com/stable/yum/centos/7/
         gpgcheck: no
       become: yes
       tags:
         - pritunl
-        
+
     - name: PRITUNL | Install EPEL
       yum: name=epel-release state=present
       when: ansible_distribution != "Fedora"
       become: yes
       tags:
         - pritunl
-
-
 
     - name: PRITUNL | Install dependencies
       yum: name={{item}} state=present
@@ -76,18 +74,18 @@
 
   - block:
 
-    - name: PRITUNL | Install pritunl repo
-      apt_repository:
-        repo: deb http://repo.pritunl.com/stable/apt xenial main
-        state: present
-        filename: pritunl
-        state: present
+    - name: PRITUNL | Install key
+      apt_key: keyserver=keyserver.ubuntu.com id="CF8E292A"
       become: yes
       tags:
         - pritunl
 
-    - name: PRITUNL | Install key
-      apt_key: keyserver=keyserver.ubuntu.com id="CF8E292A"
+    - name: PRITUNL | Install pritunl repo
+      apt_repository:
+        repo: "deb http://repo.pritunl.com/stable/apt {{ansible_distribution_release}} main"
+        state: present
+        filename: pritunl
+        state: present
       become: yes
       tags:
         - pritunl
