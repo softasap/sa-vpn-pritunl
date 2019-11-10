@@ -23,9 +23,9 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - trusty
+#        - trusty
         - xenial
-        - bionic 
+        - bionic
     - name: EL
       versions:
         - 7
