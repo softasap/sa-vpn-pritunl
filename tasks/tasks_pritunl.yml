@@ -21,9 +21,10 @@
         - pritunl
 
     - name: PRITUNL | Install dependencies
-      yum: name={{item}} state=present
-      with_items:
-      - openvpn
+      yum:
+       name:
+        - openvpn
+       state: present
       when: ansible_distribution != "Fedora"
       become: yes
       tags:
@@ -31,9 +32,10 @@
 
 
     - name: PRITUNL | Install dependencies
-      dnf: name={{item}} state=present
-      with_items:
-      - openvpn
+      dnf:
+        name:
+         - openvpn
+        state: present
       when: ansible_distribution == "Fedora"
       become: yes
       tags:
@@ -41,9 +43,10 @@
 
 
     - name: PRITUNL | Install pritunl
-      yum: name={{item}} state=present
-      with_items:
-      - pritunl
+      yum:
+        name:
+         - pritunl
+        state: present
       when: ansible_distribution != "Fedora"
       become: yes
       tags:
@@ -51,9 +54,10 @@
 
 
     - name: PRITUNL | Install pritunl
-      dnf: name={{item}} state=present
-      with_items:
-      - pritunl
+      dnf:
+        name:
+         - pritunl
+        state: present
       when: ansible_distribution == "Fedora"
       become: yes
       tags:
@@ -82,18 +86,18 @@
 
     - name: PRITUNL | Install pritunl repo
       apt_repository:
-        repo: "deb http://repo.pritunl.com/stable/apt {{ansible_distribution_release}} main"
+        repo: "deb http://repo.pritunl.com/stable/apt {{ ansible_distribution_release }} main"
         state: present
         filename: pritunl
-        state: present
       become: yes
       tags:
         - pritunl
 
     - name: PRITUNL | Install dependencies
-      apt: name={{item}} state=present update_cache=yes
-      with_items:
-      - openvpn
+      apt:
+        name:
+          - openvpn
+        state: present
       become: yes
       tags:
         - pritunl
