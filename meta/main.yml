@@ -23,7 +23,7 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - trusty
+#        - trusty
         - xenial
         - bionic
     - name: EL
